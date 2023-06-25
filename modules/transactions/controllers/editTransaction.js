@@ -9,7 +9,7 @@ const editTransaction = async (req, res) => {
   const { transaction_id, remarks, amount, transaction_type } = req.body;
   if (!transaction_id) throw "transaction_id is required";
 
-  console.log(transaction_type);
+  //console.log(transaction_type);
 
   if (!validator.isMongoId(transaction_id.toString()))
     throw "Please provide a valid transaction Id";
@@ -22,9 +22,7 @@ const editTransaction = async (req, res) => {
   });
 
   if (!getTransaction) throw "transaction not found";
-  console.log(getTransaction.amount);
-
-  console.log();
+  // console.log(getTransaction.amount);
 
   await transactionsModel.updateOne(
     {
@@ -39,7 +37,7 @@ const editTransaction = async (req, res) => {
       runValidators: true,
     }
   );
-  console.log(getTransaction.amount);
+  // console.log(getTransaction.amount);
 
   if (
     getTransaction.transaction_type === "income" &&
