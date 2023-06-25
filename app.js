@@ -9,7 +9,7 @@ const transactionsRoutes = require("./modules/transactions/transactions.routes")
 require("dotenv").config();
 
 const app = express();
-app.use(cors);
+app.use(cors());
 
 mongoose
   .connect(process.env.mongo_connection, {})
