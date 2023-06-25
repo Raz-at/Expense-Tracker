@@ -1,0 +1,3 @@
+# Expense-Tracker
+
+This is a api created using node js that helps to create account and helps to track the income and expense in your inventory...
